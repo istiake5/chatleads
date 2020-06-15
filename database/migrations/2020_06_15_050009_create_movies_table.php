@@ -16,17 +16,17 @@ class CreateMoviesTable extends Migration
         Schema::create('movies', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->strting('name');
-            $table->strting('slug');
+            $table->string('name');
+            $table->string('slug');
             $table->text('description');
-            $table->timestamps('release');
-            $table->timestamps('date');
-            $table->tinyInteger('rating')->nullable();
-            $table->strting('ticket');
-            $table->double('price', 8, 2)->nullable();
-            $table->strting('country');
-            $table->strting('genre');
-            $table->strting('photo');
+            $table->dateTime('release');
+            $table->dateTime('date');
+            $table->tinyInteger('rating');
+            $table->string('ticket');
+            $table->double('price', 8, 2);
+            $table->string('country');
+            $table->string('genre');
+            $table->string('photo');
 
             $table->timestamps();
         });

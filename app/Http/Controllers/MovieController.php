@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MovieResource;
 use App\Model\Movie;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class MovieController extends Controller
 {
@@ -14,7 +16,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        return MovieResource::collection(Movie::latest()->get());
+        
     }
 
     /**
@@ -35,7 +38,8 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Movie::create($request->all());
+        return response('Created',Response::HTTP_CREATED);
     }
 
     /**
@@ -46,7 +50,7 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        //
+        return new MovieResource($movie);
     }
 
     /**
