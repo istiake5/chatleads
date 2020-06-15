@@ -14,6 +14,10 @@ class MovieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('JWT', ['except' => ['index', 'show']]);
+    }
     public function index()
     {
         return MovieResource::collection(Movie::latest()->get());
