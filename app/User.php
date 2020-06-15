@@ -15,6 +15,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+     public function movie()
+     {
+         return $this->hasMany(User::class);
+     }
     protected $fillable = [
         'name', 'email', 'password',
     ];
