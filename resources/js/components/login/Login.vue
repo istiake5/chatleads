@@ -1,47 +1,38 @@
 <template>
-<v-container>
- <v-form @submit.prevent="login">
-   <v-text-field
-      v-model="form.email"
-      label="E-mail"
-      type="email"
-      required
-    ></v-text-field>
+  <v-container>
+    <v-form @submit.prevent="login">
+      <v-text-field label="E-mail" v-model="form.email" type="email" required></v-text-field>
 
-    <v-text-field
-      v-model="form.password"
-      type="password"
-      label="Password "
-      required
-    ></v-text-field>
+      <v-text-field label="Password" v-model="form.password" type="password" required></v-text-field>
 
-    <v-btn
-      color="success"
-      type="submit"
-    >Login
-    </v-btn>
-  </v-form>
-</v-container>
- 
+      <v-btn color="green" type="submit">Login</v-btn>
+
+      <router-link to="/signup">
+        <v-btn color="blue">Sign Up</v-btn>
+      </router-link>
+    </v-form>
+  </v-container>
 </template>
-
-<script>
+    <script>
 export default {
-    data(){
-        return {
-            form :{
-                email:null,
-                password:null
-            }
-        }
-    },
-    methods:{
-        login(){
-            axios.post('/api/auth/login',this.form)
-            .then(res => consle.log(res.data))
-            .catch(error => console.log(error.response.data))
-        }
+  data() {
+    return {
+      form: {
+        email: null,
+        password: null
+      }
+    };
+  },
+  created() {
+    if (User.loggedIn()) {
+      this.$router.push({ name: "forum" });
     }
-    
-}
+  },
+  methods: {
+    login() {
+      User.login(this.form);
+    }
+  }
+};
 </script>
+    <style></style>

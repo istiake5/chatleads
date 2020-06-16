@@ -4,11 +4,14 @@ Vue.use(VueRouter);
 
 
 import Login from "../components/login/Login";
+import Forum from '../components/forum/Forum'
+import Signup from "../components/login/signup";
+import Logout from "../components/login/Logout";
 const routes = [
     //{ path: "/", component: Parallex },
     { path: "/login", component: Login },
-    // { path: "/logout", component: Logout },
-    // { path: "/signup", component: Signup },
+    { path: "/logout", component: Logout },
+    { path: "/signup", component: Signup },
     // { path: "/category", component: CreateCategory },
     // { path: "/forum", component: Forum, name: 'forum' },
     // { path: "/ask", component: Create },
