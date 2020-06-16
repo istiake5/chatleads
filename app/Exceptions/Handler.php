@@ -60,6 +60,6 @@ class Handler extends ExceptionHandler
             return response(['error' => 'Token is not provided'], Response::HTTP_BAD_REQUEST);
         }
         return parent::render($request, $exception);
-    }
+    
     }
 }
