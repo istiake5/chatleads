@@ -11,9 +11,10 @@
       <v-toolbar-title>Chatleads</v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <v-btn> Link One</v-btn>
-       <v-btn> Link One</v-btn>
-       <v-btn> Link One</v-btn>
+      <v-btn> Forum</v-btn>
+      <v-btn>Ask Question</v-btn>
+      <v-btn>Category</v-btn>
+      <v-btn>Login</v-btn>
     </v-toolbar>
   </v-card>
 </template>
