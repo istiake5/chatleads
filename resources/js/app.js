@@ -12,16 +12,12 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 Vue.use(Vuetify)
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import VueSimplemde from 'vue-simplemde'
+import 'simplemde/dist/simplemde.min.css'
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+Vue.component('vue-simplemde', VueSimplemde)
+
+
 
 Vue.component('AppHome', require('./components/AppHome.vue').default);
 
@@ -29,6 +25,7 @@ import User from './Helpers/User'
 window.User = User
 window.EventBus = new Vue();
 import router from './Router/router.js'
+
 const vuetify = new Vuetify();
 const app = new Vue({
     el: '#app',

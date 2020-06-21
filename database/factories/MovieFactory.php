@@ -21,7 +21,7 @@ $factory->define(Movie::class, function (Faker $faker) {
         'country' => $faker->country,
         'date' => $faker->dateTime,
         'release' => $faker->dateTime,
-        'photo' => $faker->image('public/images/movies', 640, 420, null, false),
+        //'photo' => $faker->image('public/images/movies', 640, 420, null, false),
 
         'user_id' => function(){
             return User::all()->random();

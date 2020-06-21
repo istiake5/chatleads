@@ -18,9 +18,9 @@ export default {
   data(){
     return {
       items: [
-        { title: "Forum", to: "/forum", show: true },
+        { title: "Movielist", to: "/movielist", show: true },
         { title: "Login", to: "/login", show: !User.loggedIn() },
-        { title: "Ask Question", to: "/ask", show: User.loggedIn() },
+        { title: "Create Movie", to: "/createmovie", show: User.loggedIn() },
         { title: "Category", to: "/category", show: User.admin() },
         { title: "Logout", to: "/logout", show: User.loggedIn() }
       ]

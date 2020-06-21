@@ -19,14 +19,14 @@ class CreateMoviesTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('description');
-            $table->dateTime('release');
-            $table->dateTime('date');
-            $table->tinyInteger('rating');
-            $table->string('ticket');
-            $table->double('price', 8, 2);
-            $table->string('country');
-            $table->string('genre');
-            $table->string('photo');
+            $table->dateTime('release')->nullable();
+            $table->dateTime('date')->nullable();
+            $table->tinyInteger('rating')->nullable();
+            $table->string('ticket')->nullable();
+            $table->double('price', 8, 2)->nullable();
+            $table->string('country')->nullable();
+            $table->string('genre')->nullable();
+            $table->string('photo')->nullable();
 
             $table->timestamps();
         });

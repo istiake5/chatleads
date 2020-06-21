@@ -28,7 +28,7 @@ class Movie extends Model
 
     public function getPathAttribute()
     {
-        return asset("api/movie/$this->slug");
+        return "/movie/$this->slug";
 
     }
 }

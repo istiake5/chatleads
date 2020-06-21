@@ -25,6 +25,8 @@
     },
     "dependencies": {
         "vue-router": "^3.3.4",
-        "vuetify": "^2.3.0"
+        "vue-simplemde": "^1.0.6",
+        "vuetify": "^2.3.0",
+        "vuetify-datetime-picker": "^2.1.1"
     }
 }
