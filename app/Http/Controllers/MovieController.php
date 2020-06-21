@@ -42,8 +42,10 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        auth()->user()->movie()->create($request->all());
-        return response('Created',Response::HTTP_CREATED);
+        $movie = auth()->user()->movie()->create($request->all());
+        return response(new MovieResource($movie), Response::HTTP_CREATED);
+        // auth()->user()->movie()->create($request->all());
+        // return response('Created',Response::HTTP_CREATED);
     }
 
     /**
