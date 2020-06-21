@@ -17,14 +17,17 @@ export default {
             form :{
                 name:null,
                 description:null,
-                
-            }
+            },
+            errors:{}
         }
     },
     methods:{
-        create(){
-
-        },
+        create() {
+      axios
+        .post("/api/movie", this.form)
+        .then(res => this.$router.push(res.data.path))
+        .catch(error => this.errors = error.response.data.error);
+    }
        
     }
     

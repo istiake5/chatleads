@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Model\Movie;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -43,7 +44,7 @@ class User extends Authenticatable implements JWTSubject
 
      public function movie()
      {
-         return $this->hasMany(User::class);
+         return $this->hasMany(Movie::class);
      }
     protected $fillable = [
         'name', 'email', 'password',

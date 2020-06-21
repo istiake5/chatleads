@@ -17,17 +17,20 @@ class MovieResource extends JsonResource
         return [
             'name' => $this->name,
             'slug' => $this->slug,
+            'comments' => CommerntResource::collection($this->comments),
+            'comments_count' => $this->comments->count(),
             'path' => $this->path,
             'description' => $this->description,
-            'release' => $this->release->diffForHumans(),
-            'date' => $this->date->diffForHumans(),
+            'release' => $this->created_at->diffForHumans(),
+            'date' => $this->created_at->diffForHumans(),
             'rating' => $this->rating,
             'price' => $this->price,
             'ticket' => $this->ticket,
             'country' => $this->country,
             'genre' => $this->genre,
             'photo' => $this->photo,
-            'user' => $this->user->name,
+            'user_id' => $this->user_id,
+            'user' => $this->user->name
 
         ];
     }

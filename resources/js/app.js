@@ -13,6 +13,8 @@ import Vuetify from 'vuetify'
 Vue.use(Vuetify)
 
 import VueSimplemde from 'vue-simplemde'
+import md from 'marked'
+window.md = md
 import 'simplemde/dist/simplemde.min.css'
 
 Vue.component('vue-simplemde', VueSimplemde)

@@ -1,19 +1,21 @@
  
 <template>
   <div>
-    <show-movie  :data="movie"></show-movie>
+    <show-movie  :data="movie" v-if="movie"></show-movie>
     <v-container>
-      <div class="mt-4">
-        <router-link to="/login">Log In To Reply</router-link>
-      </div>
+      <comments :comments="movie.comments"></comments>
+     <new-Comment :movieSlug = movie.slug></new-Comment>
     </v-container>
+     
   </div>
 </template>
 <script>
 import ShowMovie from "./showmovie";
+import Comments from "../comment/comments";
+import NewComment from "../comment/newComment";
 
 export default {
-  components: { ShowMovie},
+  components: { ShowMovie,Comments,NewComment},
   data() {
     return {
       movie: null,

@@ -20,7 +20,7 @@ class MovieController extends Controller
     }
     public function index()
     {
-        return MovieResource::collection(Movie::latest()->get());
+        return MovieResource::collection(Movie::latest()->paginate(5));
         
     }
 
@@ -42,7 +42,7 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        Movie::create($request->all());
+        auth()->user()->movie()->create($request->all());
         return response('Created',Response::HTTP_CREATED);
     }
 
