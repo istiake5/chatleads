@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mt-2">
+ <v-card class="mt-2">
     <v-card-title primary-title>
       <div>
         <h3 class="headline mb-0">
@@ -10,7 +10,7 @@
     </v-card-title>
 
     <v-card-text>{{data.description}}</v-card-text>
-  </v-card>
+  </v-card>	
 </template>
 
 <script>

@@ -44,8 +44,7 @@ class MovieController extends Controller
     {
         $movie = auth()->user()->movie()->create($request->all());
         return response(new MovieResource($movie), Response::HTTP_CREATED);
-        // auth()->user()->movie()->create($request->all());
-        // return response('Created',Response::HTTP_CREATED);
+    
     }
 
     /**
